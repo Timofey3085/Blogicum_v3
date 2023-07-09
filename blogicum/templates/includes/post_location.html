@@ -1,0 +1,8 @@
+<small>
+  {{ post.pub_date|date:"d E Y" }} | {% if post.location and post.location.is_published %}
+  {{ post.location.name }}{% else %}Планета Земля{% endif %}<br>
+    От автора @
+  {{ post.author.username }}
+    в категории 
+  {% include "includes/category_link.html" %}
+</small>
