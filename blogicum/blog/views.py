@@ -1,4 +1,3 @@
-from django.http.response import HttpResponse
 from django.views.generic import (
     CreateView, DeleteView, DetailView, ListView, UpdateView
 )
@@ -183,7 +182,7 @@ def delete_comment(request, pk):
         return redirect('login')
     context = {
         'comment': instance
-        }
+    }
     if request.method == 'POST':
         instance.delete()
         return redirect('blog:post_detail', pk=pk)
