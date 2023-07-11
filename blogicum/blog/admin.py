@@ -20,15 +20,15 @@ class PostAdmin(admin.ModelAdmin):
         'author',
         'location',
         'category',
-        'is_published',
-        'created_at'
+        'is_published'
     )
     list_editable = (
         'is_published',
-        'category'
+        'category',
+        'pub_date'
     )
     search_fields = ('title',)
-    list_filter = ('is_published',)
+    list_filter = ('category',)
     list_display_links = ('title',)
 
 
