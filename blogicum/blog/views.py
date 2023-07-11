@@ -11,7 +11,7 @@ from django.core.paginator import Paginator
 from django.urls import reverse, reverse_lazy
 from django.contrib.auth.models import User
 from blog.forms import PostForm, CommentForm, ProfileForm
-# from django.http import Http404, HttpResponse
+from django.http import Http404, HttpResponse
 
 current_time = dt.now()
 
@@ -129,6 +129,12 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 class PostDetailView(DetailView):
     model = Post
     template_name = 'blog/detail.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        instance = get_object_or_404(Post, pk=kwargs['pk'])
+        if instance.author != request.user:
+            raise Http404("")
+        return super().dispatch(request, *args, **kwargs)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
