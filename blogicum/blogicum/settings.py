@@ -117,4 +117,4 @@ MEDIA_URL = 'media/'
 
 LOGOUT_REDIRECT_URL = '/auth/login/'
 
-LOGIN_URL = 'login/'
+LOGIN_URL = '/auth/login/'
