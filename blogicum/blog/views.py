@@ -194,7 +194,7 @@ def delete_comment(request, comment_id, post_id) -> HttpResponse:
         return redirect('login')
     context = {
         'comment': instance
-        }
+    }
     if request.method == 'POST':
         instance.delete()
         return redirect('blog:post_detail', pk=post_id)

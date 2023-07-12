@@ -15,7 +15,9 @@ class PostForm(forms.ModelForm):
         widgets = {
             'pub_date': forms.DateInput(
              format='%d/%m/%Y %H:%M',
-             attrs={'type': 'datetime-local'})}
+             attrs={'type': 'datetime-local'}
+             )
+        }
 
 
 class CommentForm(forms.ModelForm):
