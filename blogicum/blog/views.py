@@ -14,6 +14,7 @@ from blog.forms import PostForm, CommentForm, ProfileForm
 from django.http import Http404, HttpResponse
 
 current_time = dt.now()
+pag_pages = 10
 
 
 class ProfileLoginView(LoginView):
@@ -41,7 +42,7 @@ def info_profile(request, name) -> HttpResponse:
     templates = 'blog/profile.html'
     user = get_object_or_404(User, username=name)
     profile_post = user.posts.all()
-    paginator = Paginator(profile_post, 10)
+    paginator = Paginator(profile_post, pag_pages)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {
@@ -75,7 +76,7 @@ def category_posts(request, category_slug) -> HttpResponse:
         pub_date__lte=current_time,
         is_published=True,
     )
-    paginator = Paginator(post_list, 10)
+    paginator = Paginator(post_list, pag_pages)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     context = {

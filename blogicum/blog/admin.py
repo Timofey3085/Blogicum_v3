@@ -10,6 +10,7 @@ class PostInline(admin.StackedInline):
     extra = 0
 
 
+@admin.register(Post)
 class PostAdmin(admin.ModelAdmin):
     empty_value_display = 'Не задано'
 
@@ -32,25 +33,22 @@ class PostAdmin(admin.ModelAdmin):
     list_display_links = ('title',)
 
 
+@admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     inlines = (
         PostInline,)
 
 
+@admin.register(Location)
 class LocationAdmin(admin.ModelAdmin):
     inlines = (
         PostInline,)
 
 
+@admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = (
         'text',
         'author',
         'post'
     )
-
-
-admin.site.register(Post, PostAdmin)
-admin.site.register(Category, CategoryAdmin)
-admin.site.register(Location, LocationAdmin)
-admin.site.register(Comment, CommentAdmin)
