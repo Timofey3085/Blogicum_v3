@@ -13,7 +13,7 @@
         {% endif %}
         <h5 class="card-title">{{ post.title }}</h5>
         <h6 class="card-subtitle mb-2 text-muted">
-        {% include "includes/location_link.html" %}
+          {% include "includes/location_link.html" %}
         </h6>
         <p class="card-text">{{ post.text|linebreaksbr }}</p>
         {% if user == post.author %}
