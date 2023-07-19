@@ -14,7 +14,7 @@ from blog.forms import PostForm, CommentForm, ProfileForm
 from django.http import Http404, HttpResponse
 
 current_time = dt.now()
-pag_pages = 10
+pag_pages: int = 10
 
 
 class ProfileLoginView(LoginView):

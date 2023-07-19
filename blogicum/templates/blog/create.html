@@ -34,7 +34,8 @@
                 </a>
               {% endif %}
               <p>{{ post.pub_date|date:"d E Y" }} | 
-                {% if post.location and post.is_published %}</p>
+                {% if post.location and post.is_published %}
+              </p>
                   {{ post.location.name }}
                 {% else %}
                   Планета Земля

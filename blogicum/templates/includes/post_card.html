@@ -20,7 +20,7 @@
           {% else %}
             Планета Земля
           {% endif %}<br>
-            От автора 
+          От автора 
           <a class="text-muted" href="{% url 'blog:profile' post.author %}">@{{ post.author.username }}</a> 
             в категории 
           {% include "includes/category_link.html" %}
