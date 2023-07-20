@@ -33,9 +33,11 @@
                   <img class="border-3 rounded img-fluid img-thumbnail mb-2" src="{{ post.image.url }}">
                 </a>
               {% endif %}
+              <p>
                 {{ post.pub_date|date:"d E Y" }} | 
                 {% if post.location and post.is_published %}
-                  {{ post.location.name }}
+                {{ post.location.name }}
+              </p>
                 {% else %}
                   Планета Земля
                 {% endif %}<br>
