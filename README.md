@@ -51,5 +51,5 @@ python manage.py loaddata db.json   # загружаем первоначаль�
 
 ##### Админ зона находится по адресу localhost:8000/admin/, логин и пароль - те что вы задавали при команде python manage.py createsuperuser.
 
-Авторы
+Автор
 [Timofey - Razborshchikov](https://github.com/Timofey3085)
